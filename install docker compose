@@ -1,0 +1,15 @@
+---get the latest version to insatll in /usr/local/bin/docker-compose---
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+---give the exec permssion to /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+---create the sofecut to /usr/bin/docker-compose---
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+---check the version---
+docker-compose version
+
+---docker compose up---
+docker-compose up
+docker-compose up -d
