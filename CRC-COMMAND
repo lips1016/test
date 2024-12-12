@@ -1,0 +1,45 @@
+---download the crc package---
+
+mkdir /home/<user>/crc
+wget https://mirror.openshift.com/pub/openshift-v4/clients/crc/latest/crc-linux-amd64.tar.xz
+tar -xvf crc-linux-amd64.tar.xz
+
+---clean up the install package---
+mv /home/<user>/crc-linux-<version>-amd64/* /home/<user>/crc
+rm -r /home/<user>/crc-linux-<version>-amd64
+
+---config the crc VM---
+
+cd ~/.crc
+vi crc.json
+{
+  "consent-telemetry": yes,
+  "cpus": 8,
+  "disk-size": 100,
+  "memory": 30000
+}
+
+---crc install---
+cd /home/<user>/crc
+chmod +x crc
+export PATH=$PATH:/home/<user>/crc
+crc setup
+crc start -p /home/<user>/<file_location>/pull-secert.txt
+
+---crc completed---
+eval $(crc oc-env)
+oc login -u developer https://api.crc.testing:6443
+oc login -u kubeadmin https://api.crc.testing:6443
+
+oc logout
+
+---crc other commands---
+crc stop ##stop the crc VM
+crc delete ##after stop the VM, delete the VM
+crc cleanup ##cleanup all the setting
+crc status ##check the crc VM status
+crc consle ##start up the web UI
+
+sudo apt get update
+
+
