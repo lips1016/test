@@ -1,0 +1,34 @@
+apiVersion: quay.redhat.com/v1
+kind: QuayRegistry
+metadata:
+  name: example-registry
+  namespace: quay-test
+  spec:
+    configBundleSecret: 
+    components:
+    - kind: quay  ##quay application
+      managed: true
+      overrides:
+        env:
+          - name: DEBUGLOG ##turn on the debug log
+            value: 'true'
+    - kind: postgres ##postgres db
+      managed: false
+    - kind: clair 
+      managed: false
+    - kind: redis 
+      managed: true
+    - kind: horizontalpodautoscaler  ##auto scaler which according by your applicaion request setting.
+      managed: false
+    - kind: objectstorage  ##storage saving class
+      managed: false
+    - kind: route 
+      managed: true
+    - kind: mirror ##pull the image from the traget place
+      managed: false
+    - kind: monitoring ## service auto monitior system
+      managed: false
+    - kind: tls
+      managed: true
+    - kind: clairpostgres 
+      managed: false
