@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio1
+    environment:
+      - MINIO_ROOT_USER=admin ##minio UI login account
+      - MINIO_ROOT_PASSWORD=adminadmin ##minio UI login password
+    ports:
+      - "9000:9000" 
+      - "9001:9001"
+    user: "${UID}:${GID}"
+    volumes:
+      - "${HOME}/minio/data:/root/minio-docker/data" ##local volume -> target volume
+    command: server /data --console-address ":9001"
