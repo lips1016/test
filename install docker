@@ -1,0 +1,43 @@
+---clean up the oldest docker---
+sudo apt-get autoremove docker docker-ce docker-engine  docker.io  containerd runc
+sudo apt-get remove --auto-remove docker
+
+---delete the releative config/ setting---
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P 
+
+---delete the root catalog---
+rm -rf /etc/systemd/system/docker.service.d
+rm -rf /var/lib/docker
+
+sudo apt-get update
+
+---set dependence resouce---
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+ 
+---add the docker install key (ali)---
+curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+
+---add the mirrors and set the stable version to /etc/apt/source.list---
+sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable" 
+sudo apt update
+
+---check the docker-ce and docker-cli version---
+sudo apt-cache madison docker-ce
+sudo apt-cache madison docker-ce-cli
+
+---install docker---
+(latest version)
+sudo apt-get install -y docker-ce
+
+sudo apt-get install -y docker-ce=<docker_version_name> docker-cli=<docker-ce_version_name>
+
+---check docker version---
+docker version
+
+---restart docker---
+sudo systemctl enable docker
+sudo service docker restart
+sudo systemctl restart docker
+
+
+
