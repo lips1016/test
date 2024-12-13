@@ -13,7 +13,7 @@ metadata:
           - name: DEBUGLOG ##turn on the debug log
             value: 'true'
     - kind: postgres ##postgres db
-      managed: false
+      managed: true
     - kind: clair 
       managed: false
     - kind: redis 
