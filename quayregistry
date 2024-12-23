@@ -32,3 +32,4 @@ metadata:
       managed: true
     - kind: clairpostgres 
       managed: false
+configBundleSecret: config-bundle-secret
