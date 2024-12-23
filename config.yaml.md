@@ -1,3 +1,4 @@
+```
 SERVER_HOSTNAME: quay.apps-crc.testingETUP_COMPLETE: trueTAG_EXPIRATION_OPTIONS:
     - 0s
     - 1d
@@ -10,7 +11,7 @@ DISTRIBUTED_STORAGE_CONFIG:
   - RadosGWStorage
   - access_key: 4Vf4rKnYdPw1CQNKjf79 ##generate from minio access key, please clean up ## before deploy
     bucket_name: quay ##the bucket name which create from minio
-    hostname: 192.168.91.136 ##minio stroage UI host, please clean up ## before deploy
+    hostname: 192.168.91.136:9000 ##using your own host:9000,minio stroage UI host, please clean up ## before deploy
     is_secure: false
     secret_key: aYEnstm0jzTzO61UnWS5h1Qs8nTAJ5HBKjdCHMdb ##generate from minio secert key, please clean ## before deploy
     storage_path: /datastorage/registry
@@ -19,6 +20,8 @@ DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS:
 DISTRIBUTED_STORAGE_PREFERENCE:
 - local_us
 PREFERRED_URL_SCHEME: http
+```
 
-
+```
 oc create secret generic --from-file config.yaml=./config.yaml config-bundle-secret -n <project-name> #run after created the config.yaml
+```
