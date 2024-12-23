@@ -16,7 +16,7 @@ vi crc.json
   "consent-telemetry": yes,
   "cpus": 8,
   "disk-size": 100,
-  "memory": 30000
+  "memory": 40960
 }
 
 ---crc install---
