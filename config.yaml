@@ -26,3 +26,6 @@ DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS:
 DISTRIBUTED_STORAGE_PREFERENCE:
   - local_us
 PREFERRED_URL_SCHEME: http
+
+
+oc create secret generic --from-file config.yaml=./config.yaml config-bundle-secret -n <project-name> #run after created the config.yaml
