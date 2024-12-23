@@ -13,7 +13,7 @@ rm -r /home/<user>/crc-linux-<version>-amd64
 cd ~/.crc
 vi crc.json
 {
-  "consent-telemetry": yes,
+  "consent-telemetry": "yes",
   "cpus": 8,
   "disk-size": 100,
   "memory": 40960
