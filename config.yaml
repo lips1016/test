@@ -1,5 +1,7 @@
 ```
-SERVER_HOSTNAME: quay.apps-crc.testingETUP_COMPLETE: trueTAG_EXPIRATION_OPTIONS:
+SERVER_HOSTNAME: quay.apps-crc.testing
+SETUP_COMPLETE: true
+TAG_EXPIRATION_OPTIONS:
     - 0s
     - 1d
     - 1w
