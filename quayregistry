@@ -6,27 +6,23 @@ metadata:
   spec:
     configBundleSecret: 
     components:
-    - kind: quay  ##quay application
+    - kind: quay
       managed: true
-      overrides:
-        env:
-          - name: DEBUGLOG ##turn on the debug log
-            value: 'true'
-    - kind: postgres ##postgres db
+    - kind: postgres
       managed: true
     - kind: clair 
       managed: false
     - kind: redis 
       managed: true
-    - kind: horizontalpodautoscaler  ##auto scaler which according by your applicaion request setting.
-      managed: false
-    - kind: objectstorage  ##storage saving class
+    - kind: horizontalpodautoscaler
+      managed: true
+    - kind: objectstorage
       managed: false
     - kind: route 
       managed: true
-    - kind: mirror ##pull the image from the traget place
+    - kind: mirror
       managed: false
-    - kind: monitoring ## service auto monitior system
+    - kind: monitoring
       managed: false
     - kind: tls
       managed: true
