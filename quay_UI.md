@@ -1,11 +1,24 @@
 1. open the portal with the URL which can get from route
 
-2. create the user while the first time login
+2. the UI page might not be able accessable in one suituaiton
 
-3. after login, create the repo
+3. add the host record in hosttable
+
+```
+vi /etc/hosts
+
+``` 
+add the quay page UI behind the records.
+
+![image](https://github.com/user-attachments/assets/98d2cc8a-fe6e-41ec-a6f8-b1136d3045ab)
+
+
+4. create the user while the first time login
+
+5. after login, create the repo
 ![image](https://github.com/user-attachments/assets/d07c1a77-8a06-4601-b341-331354175228)
 
-4. After create, the UI will show like below
+6. After create, the UI will show like below
 ![image](https://github.com/user-attachments/assets/71a6fb6d-933a-4d4a-a514-5b21b9c30f7f)
 
 ## there is two links shown as right side, if you need to pull the data from quay
