@@ -82,7 +82,7 @@ Default output format [None]:
 ```
 ![image](https://github.com/user-attachments/assets/fad6397a-998e-49e2-9a68-09f190cfc2f8)
 
-## file will auto genereate ./.aws/credentials
+ ##file will auto genereate ./.aws/credentials
 
 10. testing the connection
 
