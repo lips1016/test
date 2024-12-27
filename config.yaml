@@ -30,3 +30,5 @@ PREFERRED_URL_SCHEME: http
 ---
 oc create secret generic --from-file config.yaml=./config.yaml config-bundle-secret -n <project-name> #run after created the config.yaml
 ---
+
+#if the server is down, need to clean the old file and recreate the bucket if you rebuild
