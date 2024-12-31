@@ -11,11 +11,11 @@ TAG_EXPIRATION_OPTIONS:
 DISTRIBUTED_STORAGE_CONFIG:
   local_us:
   - RadosGWStorage
-  - access_key: IkxV4HZcWpA8S9uZQ6aW
+  - access_key: fz809VmJ2LAjL39uCk2Y
     bucket_name: quay
     hostname: 192.168.91.136:9000
     is_secure: false
-    secret_key: mE3pwW8uD5olvInf8ZWEjUrByn3mHD4vuc3FG8Y3
+    secret_key: E3pwW8uD5olvInf8ZWEjUrByn3mHD4vuc3FG8Y3
     storage_path: /datastorage/registry
 DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS:
 - local_us
