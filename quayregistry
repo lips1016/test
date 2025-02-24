@@ -8,6 +8,15 @@ metadata:
     components:
     - kind: quay
       managed: true
+        env:
+          - name: DEBUGLOG
+            value: 'true'
+          - name: NO_PROXY
+            value: 
+          - name: HTTP_PROXY
+            value: 
+          - name: HTTPS_PROXY
+            value: 
     - kind: postgres
       managed: true
     - kind: clair 
